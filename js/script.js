@@ -13,7 +13,16 @@ if (/[^a-zA-Z]/.test(userSurname)){
   alert('Cognome inserito il lista!')
 }
 
+// User surname Capitalize
+// userSurname = userSurname[0].toUpperCase() + userSurname.substring(1)
+
+// Surname List order
+surnameList = surnameList.sort();
+
+//Result List - Stamp
+var result = document.getElementById('result');
+
 //Surname List - Stamp
-// while (true) {
-//
-// }
+for (var i = 0; i < surnameList.length; i++) {
+  result.innerHTML = result.innerHTML + '<li>' + surnameList[i] + '</li>';
+}
