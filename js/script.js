@@ -9,20 +9,23 @@ if (/[^a-zA-Z]/.test(userSurname)){
   alert('Insersci solo lettere');
   location.reload();
 } else {
+  userSurname = userSurname.charAt(0).toUpperCase() + userSurname.substring(1).toLowerCase();
   surnameList.push(userSurname)
   alert('Cognome inserito il lista!')
 }
-
-// User surname Capitalize
-// userSurname = userSurname[0].toUpperCase() + userSurname.substring(1)
 
 // Surname List order
 surnameList = surnameList.sort();
 
 //Result List - Stamp
 var result = document.getElementById('result');
+var number = document.getElementById('number');
 
 //Surname List - Stamp
 for (var i = 0; i < surnameList.length; i++) {
   result.innerHTML = result.innerHTML + '<li>' + surnameList[i] + '</li>';
+
+  if (surnameList[i] === userSurname) {
+      number.innerText = 'Sei il n. ' + (surnameList.indexOf(userSurname) + 1) + ' della lista'
+    }
 }
