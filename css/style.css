@@ -1,7 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 main {
   width: 800px;
-  margin: auto;
+  padding: 30px;
+  margin: 40px auto;
+  font-size: 28px;
+  background: linear-gradient(#FFFAA7, #EDDD59) no-repeat;
+  border-bottom-right-radius: 50%;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
+
+#result {
+  width: 40%;
+  font-family: 'Reenie Beanie'
+}
+
+#result li {
+  padding: 15px;
+  border-bottom: 1px solid #6F3515;
+}
+
+.evidence {
+  background-color: rgba(255, 255, 0, 0.2);
+}
+
+#number {
+  width: 40%;
+  font-family: 'Rock Salt';
+  font-size: 0.9em;
 }

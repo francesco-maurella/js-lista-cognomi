@@ -5,27 +5,39 @@ var surnameList = ['Kent', 'Wayne', 'Jordan', 'Prince', 'Johnz', 'Allen', 'West'
 var userSurname = prompt('Scrivi il tuo cognome');
 
 // Verify surname data
-if (/[^a-zA-Z]/.test(userSurname)){
-  alert('Insersci solo lettere');
+if (/[^a-zA-Z]/.test(userSurname) || !userSurname){
+  alert('Insersci un nome valido, composto da lettere!');
   location.reload();
 } else {
   userSurname = userSurname.charAt(0).toUpperCase() + userSurname.substring(1).toLowerCase();
   surnameList.push(userSurname)
   alert('Cognome inserito il lista!')
-}
+};
 
 // Surname List order
 surnameList = surnameList.sort();
 
-//Result List - Stamp
+//HTML ID Elements Var
 var result = document.getElementById('result');
 var number = document.getElementById('number');
 
 //Surname List - Stamp
-for (var i = 0; i < surnameList.length; i++) {
+i = 0;
+while (i < surnameList.length) {
   result.innerHTML = result.innerHTML + '<li>' + surnameList[i] + '</li>';
+  i++;
+};
 
-  if (surnameList[i] === userSurname) {
-      number.innerText = 'Sei il n. ' + (surnameList.indexOf(userSurname) + 1) + ' della lista'
-    }
-}
+// Surname Position Var
+var listElemntPosition = surnameList.indexOf(userSurname);
+
+// Surname List Element container
+var listElemnt = result.getElementsByTagName('LI')[listElemntPosition];
+
+listElemntPosition++;
+
+//Surname List Element Class
+listElemnt.className = 'evidence';
+
+//Surname Position - Stamp
+number.innerHTML = 'Sig. ' + userSurname + ',<br> lei è il n. ' + listElemntPosition + ' della lista';
