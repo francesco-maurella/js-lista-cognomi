@@ -15,7 +15,7 @@ if (/[^a-zA-Z]/.test(userSurname) || !userSurname){
 };
 
 // Surname List order
-surnameList = surnameList.sort();
+surnameList.sort();
 
 //HTML ID Elements Var
 var result = document.getElementById('result');
@@ -24,7 +24,7 @@ var number = document.getElementById('number');
 //Surname List - Stamp
 i = 0;
 while (i < surnameList.length) {
-  result.innerHTML = result.innerHTML + '<li>' + surnameList[i] + '</li>';
+  result.innerHTML +=  '<li>' + surnameList[i] + '</li>';
   i++;
 };
 
