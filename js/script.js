@@ -10,8 +10,8 @@ if (/[^a-zA-Z]/.test(userSurname) || !userSurname){
   location.reload();
 } else {
   userSurname = userSurname.charAt(0).toUpperCase() + userSurname.substring(1).toLowerCase();
-  surnameList.push(userSurname)
-  alert('Cognome inserito il lista!')
+  surnameList.push(userSurname);
+  alert('Cognome inserito il lista!');
 };
 
 // Surname List order
